@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "mnist-draw-classifier"
+version = "0.1.0"
+description = ""
+authors = ["Your Name <you@example.com>"]
+packages = [{include = "mnist_draw_classifier"}]
+
+[tool.poetry.dependencies]
+python = "^3.10, <3.11"
+equinox = "^0.10.4"
+jax = "^0.4.10"
+tornado = "^6.3.2"
+optax = "^0.1.5"
+torch = "^2.0.1"
+torchvision = "^0.15.2"
+jaxtyping = "^0.2.19"
+matplotlib = "^3.7.1"
+jaxlib = "^0.4.10"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.ruff]
+ignore = ["F722"]
