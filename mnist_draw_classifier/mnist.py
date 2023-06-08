@@ -144,14 +144,9 @@ def train(
     return model
 
 
-key = jax.random.PRNGKey(SEED)
-key, subkey = jax.random.split(key)
-# model = CNN(subkey)
-# model = train(model, trainloader, testloader, optim, STEPS, PRINT_EVERY)
-# eqx.tree_serialise_leaves("mnist.eqx", model)
-
-dummy_x = next(iter(trainloader))[0]
-print(dummy_x)
-plt.imshow(dummy_x[0, 0, ...], cmap="gray")
-
-plt.show()
+def main() -> None:
+    key = jax.random.PRNGKey(SEED)
+    key, subkey = jax.random.split(key)
+    model = CNN(subkey)
+    model = train(model, trainloader, testloader, optim, STEPS, PRINT_EVERY)
+    eqx.tree_serialise_leaves("mnist.eqx", model)
